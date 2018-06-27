@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import './FlightList.css';
 import Typography from '../common/Typography';
+import Duration from '../common/Duration';
 
 const FlightList = ({ flights, origin, destination }) =>
   (
@@ -20,7 +21,9 @@ const FlightList = ({ flights, origin, destination }) =>
               </div>
             </div>
             <div>
-              <div>Duration</div>
+              <div>
+                <Duration arrival={flight.aTimeUTC} departure={flight.dTimeUTC} />
+              </div>
               <div>
                 <Typography type='secondary'>
                   {flight.cityFrom} ({flight.flyFrom}) -> {flight.cityTo} ({flight.flyTo})
