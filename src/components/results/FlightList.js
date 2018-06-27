@@ -3,6 +3,7 @@ import * as React from 'react';
 import './FlightList.css';
 import Typography from '../common/Typography';
 import Duration from '../common/Duration';
+import Time from '../common/Time';
 
 const FlightList = ({ flights, origin, destination }) =>
   (
@@ -17,7 +18,9 @@ const FlightList = ({ flights, origin, destination }) =>
           <div key={flight.id} className='FlightListItem'>
             <div>
               <div>
-                <Typography>{flight.dTime} - {flight.aTime}</Typography>
+                <Time datetime={flight.dTime} />
+                <Typography> - </Typography>
+                <Time datetime={flight.aTime} />
               </div>
             </div>
             <div>
@@ -30,7 +33,9 @@ const FlightList = ({ flights, origin, destination }) =>
                 </Typography>
               </div>
             </div>
-            <div>{flight.price} EUR</div>
+            <div>
+              <Typography>{flight.price} EUR</Typography>
+            </div>
           </div>
         ))}
       </div>
