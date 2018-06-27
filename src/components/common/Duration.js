@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { DateTime } from 'luxon';
-import Typography from "./Typography";
+
+import Typography from './Typography';
 
 const Duration = ({ arrival, departure }) => {
   const duration = DateTime
